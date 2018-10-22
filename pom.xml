@@ -16,6 +16,7 @@
         <module>spring-app</module>
         <module>spring-app-client-config</module>
         <module>gemfire-spring-pizza-store</module>
+        <module>pcc-pizza-store</module>
     </modules>
 
     <build>
