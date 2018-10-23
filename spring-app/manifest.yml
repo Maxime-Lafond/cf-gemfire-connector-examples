@@ -3,4 +3,4 @@ applications:
 - name: spring_app
   path: target/spring-app-1.0.0-SNAPSHOT.jar
   services:
-  - service0
+  - mgac1-pcc-instance-id-1

@@ -3,4 +3,4 @@ applications:
 - name: pcc-pizza
   path: target/pcc-pizza-store-1.0.0-SNAPSHOT.jar
   services:
-  - gf0
+  - mgac1-pcc-instance-id-1

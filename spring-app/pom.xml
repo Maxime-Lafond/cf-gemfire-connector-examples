@@ -11,42 +11,50 @@
     <name>spring-app</name>
 
     <parent>
-        <groupId>com.desjardins.caisse.courant-convenance.pcc</groupId>
-        <artifactId>POC-PCC</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.6.RELEASE</version>
     </parent>
 
     <properties>
         <env.BUILD_NUMBER>build-number</env.BUILD_NUMBER>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
         <build.url>unknown</build.url>
         <build.tag>unknown</build.tag>
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-to-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
+            <version>1.2.5.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>com.gemstone.gemfire</groupId>
             <artifactId>gemfire</artifactId>
             <version>8.2.1</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-gemfire</artifactId>
-            <version>1.6.1.RELEASE</version>
+            <groupId>io.pivotal.spring.cloud</groupId>
+            <artifactId>spring-cloud-gemfire-spring-connector</artifactId>
+            <version>1.0.0.RELEASE</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.pivotal.spring.cloud/spring-cloud-gemfire-cloudfoundry-connector -->
         <dependency>
             <groupId>io.pivotal.spring.cloud</groupId>
             <artifactId>spring-cloud-gemfire-cloudfoundry-connector</artifactId>
             <version>1.0.0.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.2.5.RELEASE</version>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-gemfire</artifactId>
+            <version>1.6.1.RELEASE</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -62,6 +70,21 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.0.3.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>pivotal.SDGApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>

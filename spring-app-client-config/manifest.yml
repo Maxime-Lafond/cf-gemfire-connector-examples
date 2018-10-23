@@ -1,6 +1,6 @@
 ---
 applications:
-- name: spring_app
+- name: spring-app-client-config
   path: target/spring-app-client-config-1.0.0-SNAPSHOT.jar
   services:
   - mgac1-pcc-instance-id-1
