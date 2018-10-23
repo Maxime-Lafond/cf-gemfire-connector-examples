@@ -40,11 +40,11 @@ public class ClientConfiguration extends AbstractCloudConfig {
     Cloud cloud = cloudFactory.getCloud();
 
     // Let Spring Cloud create a service connector for you.
-//    ClientCache cache = cloud.getServiceConnector("mgac1-pcc-instance-id-1", ClientCache.class,
- //       createGemfireConnectorConfig());
+    ClientCache cache = cloud.getServiceConnector("mgac1-pcc-instance-id-1", ClientCache.class,
+       createGemfireConnectorConfig());
 
-    ClientCache cache = cloud.getSingletonServiceConnector(ClientCache.class,
-            createGemfireConnectorConfig());
+/*    ClientCache cache = cloud.getSingletonServiceConnector(ClientCache.class,
+            createGemfireConnectorConfig());*/
 
     
     return cache;
