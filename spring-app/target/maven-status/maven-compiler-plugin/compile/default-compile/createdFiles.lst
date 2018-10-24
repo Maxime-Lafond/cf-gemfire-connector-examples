@@ -1,2 +1,3 @@
 pivotal\SDGApp.class
 pivotal\Client.class
+pivotal\ClientCache.class

@@ -1,6 +1,5 @@
 package pivotal;
 
-import org.apache.geode.cache.client.ClientCache;
 import io.pivotal.spring.cloud.service.gemfire.GemfireServiceConnectorConfig;
 import org.springframework.cloud.Cloud;
 import org.springframework.cloud.CloudFactory;
@@ -13,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by pivotal on 9/22/15.
  */
 @Configuration
-public class ClientConfiguration extends AbstractCloudConfig {
+public class ClientCache extends AbstractCloudConfig {
 
   public ServiceConnectorConfig createGemfireConnectorConfig() {
     // Create a custom service connector config object which sets specific properties
